@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alphasoftware.alpharun"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_icon"
+        android:label="@string/app_name"
+        android:logo="@drawable/ic_launcher"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.alphasoftware.alpharun.main.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alphasoftware.alpharun.main.BookmarkActivity" >
+        </activity>
+        <activity
+            android:name="com.alphasoftware.alpharun.main.WebViewActivity"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity android:name="com.alphasoftware.alpharun.main.PreferencesActivity" >
+
+            <!-- android:theme="@android:style/Theme.NoTitleBar" -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.matt.gardenweb.main.MainActivity" />
+        </activity>
+        <activity android:name="com.alphasoftware.alpharun.pref.HelpPreferenceActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alphasoftware.alpharun.pref.ClearCacheActivity" >
+        </activity>
+        <activity
+            android:name="com.alphasoftware.alpharun.main.CordovaWebViewActivity"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.alphasoftware.alpharun.pref.LogfilesPreference"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.alphasoftware.alpharun.pref.CookiesPreference"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity android:name="com.alphasoftware.alpharun.pref.AboutPreferenceActivity" >
+        </activity>
+        <activity
+            android:name="com.alphasoftware.alpharun.cookie_and_logs.ItemListActivity"
+            android:configChanges="orientation|screenSize" >
+        </activity>
+        <activity android:name="com.alphasoftware.alpharun.cookie_and_logs.ItemDetailActivity"></activity>
+    </application>
+
+</manifest>

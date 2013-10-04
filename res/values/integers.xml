@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="Max">50</integer>
+    <integer name="Progress">2</integer>
+    <integer name="navBtnLeft">150</integer>
+    <integer name="navBarBottom">200</integer>
+
+</resources>

@@ -1,0 +1,6 @@
+X1.  Do clear cache
+X2.  Add button to those entries that allow you to scan in URL
+3.  Change color of selected element.
+X4.  Integrate QR code scanner - discontinued
+5.  Touch highlighting
+

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_general_title" >
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="touch_highlighting_preference"
+            android:summary=""
+            android:title="@string/pref_touch" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="status_bar_preference"
+            android:summary=""
+            android:title="@string/pref_status_bar" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="toolbar_preference"
+            android:summary="@string/pref_toolbar_btn_sub"
+            android:title="@string/pref_toolbar_btn" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="phonegap_preference"
+            android:summary="@string/pref_phonegap_sub"
+            android:title="@string/pref_phonegap" />
+
+        <!--
+        <Preference
+            android:key="cookies_preference"
+            android:summary="@string/pref_cookies_sub"
+            android:title="@string/pref_cookies" >
+            <intent
+                android:data="COOKIE"
+                android:targetClass="com.alphasoftware.alpharun.pref.CookiesPreference"
+                android:targetPackage="com.alphasoftware.alpharun" />
+        </Preference>
+        -->
+        <Preference
+            android:key="cookies_preference"
+            android:summary="@string/pref_cookies_sub"
+            android:title="@string/pref_cookies" >
+            <intent
+                android:data="COOKIE"
+                android:targetClass="com.alphasoftware.alpharun.cookie_and_logs.ItemListActivity"
+                android:targetPackage="com.alphasoftware.alpharun" />
+        </Preference>
+        <!--
+        <Preference
+            android:key="logfiles_preference"
+            android:summary="@string/pref_log_file_sub"
+            android:title="@string/pref_log_file" >
+            <intent
+                android:targetClass="com.alphasoftware.alpharun.pref.LogfilesPreference"
+                android:targetPackage="com.alphasoftware.alpharun" />
+        </Preference>
+        -->
+
+        <Preference
+            android:key="logfiles_preference"
+            android:summary="@string/pref_log_file_sub"
+            android:title="@string/pref_log_file" >
+            <intent
+                android:data="LOG"
+                android:targetClass="com.alphasoftware.alpharun.cookie_and_logs.ItemListActivity"
+                android:targetPackage="com.alphasoftware.alpharun" />
+        </Preference>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="log_errors_preference"
+            android:title="@string/pref_log_errors" />
+
+        <Preference
+            android:key="clear_cache_preference"
+            android:summary="@string/pref_clear_cache_sub"
+            android:title="@string/pref_clear_cache" >
+            <intent
+                android:targetClass="com.alphasoftware.alpharun.pref.ClearCacheActivity"
+                android:targetPackage="com.alphasoftware.alpharun" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Debugging" >
+        <EditTextPreference
+            android:dialogTitle="Optional text"
+            android:key="url_variable"
+            android:summary="@string/pref_url_variable_sub"
+            android:title="@string/pref_url_variable" />
+        <EditTextPreference
+            android:dialogTitle="Optional: see help"
+            android:key="javascript_text"
+            android:summary="@string/pref_javascript_sub"
+            android:title="@string/pref_javascript" />
+
+        <ListPreference
+            android:key="pastJS_commands"
+            android:summary="@string/pref_javascript_past_sub"
+            android:title="@string/pref_javascript_past" />
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="help_preference"
+        android:title="@string/pref_help" >
+        <intent
+            android:targetClass="com.alphasoftware.alpharun.pref.HelpPreferenceActivity"
+            android:targetPackage="com.alphasoftware.alpharun" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="about_reference"
+        android:summary="@string/pref_about_sub"
+        android:title="@string/pref_about" >
+        <intent
+            android:targetClass="com.alphasoftware.alpharun.pref.AboutPreferenceActivity"
+            android:targetPackage="com.alphasoftware.alpharun" />
+    </PreferenceScreen>
+
+</PreferenceScreen>

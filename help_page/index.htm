@@ -1,0 +1,367 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AlphaRun Help</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<style>
+ body {font-family:sans-serif;background-color:#F0F0F0;}
+ .superscript {line-height:70%;vertical-align:5px;font-size:80%;padding-left:2px;}
+ .head {font-weight:bold;padding:10px 0 0px 0;color:#070;border-top:2px solid #999;}
+ .sample {padding:0 0 8px 0;}
+ ul {margin-left:-15px;}
+ .itemtitle {font-weight:bold;border-top:1px solid #999;padding:4px 0 0 0;}
+ .itembody {margin:0 0 0 0;padding:0 0 5px 12px;}
+ .lastbody {margin:0 0 12px 0;border-bottom:1px solid #999;padding:0 0 5px 12px;}
+ .source {padding:6px 0 6px 0;font-family:monospace;font-weight:bold;}
+</style>
+<script>
+var versionLevel = 1;
+function getversion() {
+ var version = document.getElementById("version");
+ if (version) {
+  var sstr = document.location.search;
+  if (!sstr || sstr == "") {
+   sstr = "version=1.0";
+  }
+  var v = sstr.match(/(version=)([0-9.]+)/);
+  version.innerHTML = v[2];
+  var v2 = sstr.match(/(version=)([0-9]+)/);
+  var v3 = sstr.match(/(version=)([0-9]+)\.([0-9.]*)/);
+  versionLevel = v2[2]-0;
+  if (v3[3]!="0") {
+   versionLevel++;
+  }
+ }
+
+}
+
+function showHideByVersion() {
+ var divs = document.getElementsByTagName("*");
+ for (var i=0; i<divs.length; i++) {
+  var div = divs[i];
+  var clist = div.classList;
+  if (clist.contains("v1only")) {
+   if (versionLevel!=1) {
+    div.style.display = "none";
+    div.style.color = "#F00";
+   }
+  }
+  if (clist.contains("v2only")) {
+   if (versionLevel!=2) {
+    div.style.display = "none";
+   }
+  }
+  if (clist.contains("v2start")) {
+   if (versionLevel<2) {
+    div.style.display = "none";
+   }
+  }
+ }
+
+}
+</script>
+<style type="text/css"></style></head>
+<body onload="getversion();showHideByVersion();">
+<div style="font-family:Verdana;font-size:11pt;">
+
+<div>
+<div style="float:left;padding:0 10px 0 0;">
+ <img src="./ic_launcher.png">
+</div>
+<div style="font-size:120%;font-weight:bold;color:#070;">
+AlphaRun Web Help
+</div>
+<div style="font-size:80%;font-style:italic;padding:4px 0 5px 0;">
+<div >Help for version: 1.0</div>
+You are running version: <span id="version">1.0</span>
+</div>
+</div>
+
+<div style="font-size:80%;padding:30px 0 0 0;">
+<a href="#about"><b>About</b></a>  |
+<a href="#bookmarks"><b>Bookmarks</b></a> | 
+<a href="#mainview"><b>Main</b></a> | 	
+<a href="#settings"><b>Settings</b></a> |
+<a href="#more"><b>More</b></a> 
+</div>
+<div style="padding:20px 0 0 0;">
+<div class="head"><a name="about">ABOUT THE APP</a></div>
+<p>
+The <i>AlphaRun Web Browser for Web App Developers</i> is a 
+simple, lightweight, full-screen browser for the Android platform. 
+It is designed for use by developers of applications built using standard Web technologies, 
+including HTML, CSS, and JavaScript. 
+It is NOT a general purpose browser for normal web browsing.
+</p>
+<p>
+While generally useful for HTML5 web app developers, AlphaRun's main purpose is for testing and running mobile applications built using Alpha Software's <i>Alpha Anywhere</i> development system. Alpha Anywhere is a complete system for rapidly building and deploying HTML5 business applications for mobile devices and personal computers. For more information about Alpha Anywhere, see <a href="http://www.alphasoftware.com/">www.alphasoftware.com</a>.
+</p>
+<p>
+The features include:
+</p><ul>
+<li>
+ Full screen browsing
+</li><li>
+ Only reloads URL while running when you or the page requests a reload
+</li><li>
+ Optional use of PhoneGap/Cordova WebView with various plug-ins instead of basic WebView
+</li><li>
+ Manually ordered bookmark list, no address bar
+</li><li>
+ Can hide device status bar
+</li><li>
+ "Touch Highlighting" mode displays finger touches for more effective demos on mirrored external displays
+</li><li>
+ Can display and clear cookies
+</li><li>
+ Can add browser load errors and current value of optional JavaScript expression to a log file
+</li><li>
+ URL variable to insert into bookmark URLs for easier use on different LANs
+</li>
+<!--<li>
+ "Auto-Fill" custom URL scheme to use emailed values and links to add to bookmark list
+</li>
+-->
+<li>
+ Ability to use the camera to scan a QR code to input a URL (some development systems 
+ display QR codes on the screen of URLs you can use for testing)
+</li>
+</ul>
+<p></p>
+<div class="head"><a name="bookmarks">SETTING, UPDATING, AND USING BOOKMARKS</a></div>
+<p>
+The <b>Bookmarks</b> list shows all of the current web page bookmarks, one per row. 
+Both the user-provided bookmark name and the URL it refers to are displayed. 
+These bookmarks are only for this app and are not related to any other app's bookmarks.
+</p>
+<p>
+<img src="./bookmarks-plain.png" style="width:310px;height:84px;"><br>
+There are two buttons above the list: <b>Add</b> <img src="./ic_menu_add.png"/> and <b>Preferences</b> <img src="./ic_menu_preferences.png"/> . 
+The Add button opens the New Bookmark page to create a new bookmark.  The Preferences button opens the AlphaRun preferences screen, where you can set browsing behaviors and access debugging logs, among other options (see below for more details).
+</p><p>
+<img class="sample" src="./bookmarks-editing.png" style="width:310px;height:87px;"><br>
+By holding down on a specific bookmark for a short period, you are able to access functionality specific to that highlighted bookmark.  Those are:
+<ul>
+<li><img src="./ic_menu_edit.png"/> - Edit the highlighted  bookmark's name, URL, UID, and/or ability to be updated by scanning a QR code.</li>
+<li><img src="./ic_menu_delete.png"/> - Delete the highlighted bookmark.</li>
+<li><img src="./action_move_up.png"/> - Move the bookmark up the list.</li>
+<li><img src="./action_move_down.png"/> - Move the bookmark down the list.</li>
+</ul>
+</p><p>
+By pressing either the Add button <img src="./ic_menu_add.png"/> (for a new bookmark) or the Edit button <img src="./ic_menu_edit.png"/> (for an existing bookmark) switches to the Details display to let 
+you set the properties. 
+</p><p>
+</p><div ><img class="sample" src="./bookmarks-details.png" style="width:310px;height:238px;"></div>
+<div><img class="sample" src="bookmarks-details2.png" style="width:310px;height:109px;"></div>
+The bookmark properties that you can set in the <b>Details</b> view are:
+
+<div class="itemtitle">Name</div>
+<div class="itembody">An optional user-provided description of the bookmark.</div>
+
+<div class="itemtitle">URL</div>
+<div class="itembody">
+ The URL to access when the bookmark is selected. 
+ If this value does not contain "://", the characters "http://" will automatically be 
+ assumed to start the URL.
+</div>
+
+<div class="itemtitle">UID</div>
+<div class="itembody">
+ An optional user-provided text value used to identify a particular 
+ bookmark. This is unused at this point.
+</div>
+
+<div class="itemtitle " >Scan Button</div>
+<div class="itembody " >
+ If this setting is "ON", then a Scan button will appear on the 
+ right side of the row for this bookmark in the Bookmarks list. 
+ The Scan button lets you, with one tap in the Bookmarks list, 
+ update the URL for that bookmark 
+ from a QR code and then select it for display. 
+ (Some development systems 
+ display QR codes on the screen of URLs you can use for testing.)
+</div>
+
+<div class="itemtitle " >Scan QR code URL</div>
+<div class="lastbody " >
+ This is a button that displays at the bottom of the screen. 
+ Pressing it will bring up a live-view from the camera. 
+ If you point the camera at a QR code, the resulting scanned 
+ value will replace the URL value in the Details for this bookmark.
+</div>
+<p>To save the current bookmark values, press the Save button <img src="./ic_menu_save.png"/>.<br>To cancel out of the current screen without saving any changes made, press the Cancel button <img src="./ic_menu_close_clear_cancel.png"/>.
+
+<p></p><p>
+When the <b>plain Bookmarks list</b> is displayed, tapping on a bookmark will select it and switch to 
+the Main Web Viewing Display, which will then load that URL.
+</p>
+
+<div class="head"><a name="mainview">MAIN WEB VIEWING DISPLAY AND THE TOOLBAR</a></div>
+<p>
+The Main Web Viewing Display takes up the whole screen. 
+It acts like a regular browser view, accepting taps, swipes, etc. 
+It includes the <b>Toolbar Button</b> on the right that is used to access the AlphaRun features:
+</p><p>
+<img src="./ic_menu_compass.png">
+</p><p>
+When you tap the Toolbar Button, the full <b>Toolbar</b> will be displayed:
+</p>
+<img src="./toolbar-open.png" style="width:310px;height:49px;">
+<p></p><p>
+Tapping the toolbar icon on the right again will <b>hide</b> the toolbar.
+</p><p>
+<b>Press and holding</b> on the toolbar button and then dragging up or down lets you 
+<b>reposition</b> the toolbar button (and the toolbar when it is displayed) to different 
+parts of the screen so as not to obscure important buttons on the web page itself. 
+These positions are remembered separately for portrait and landscape device orientation.
+</p><p>
+The <b>buttons on the toolbar</b> are as follows (from left to right):
+</p><div class="itemtitle">Back</div>
+<div class="itembody">
+ Acts like a browser Back button
+</div>
+<div class="itemtitle">Forward</div>
+<div class="itembody">
+ Acts like a browser Forward button
+</div>
+<div class="itemtitle">Refresh</div>
+<div class="itembody">
+ Reloads the current browser display
+</div>
+<div class="itemtitle">Stop</div>
+<div class="itembody">
+ Stops loading
+</div>
+<div class="itemtitle">Settings</div>
+<div class="itembody">
+ Brings up the AlphaRun Settings page
+</div>
+<div class="itemtitle">Bookmarks</div>
+<div class="itembody">
+ Brings up the AlphaRun Bookmarks list
+</div>
+<div class="itemtitle">Compass</div>
+<div class="lastbody">
+ Hides the toolbar when tapped, repositions when you press, hold, and drag
+</div>
+<p></p><p>
+There is also an optional Javascript button <img src="./ic_menu_start_conversation.png"/> that appears when the JavaScript setting is not blank. 
+See the help for the JavaScript setting below for more information.
+</p>
+<div class="head"><a name="settings">SETTINGS</a></div>
+<p>
+Tapping the toolbar Settings button brings up the Settings page:
+</p><p>
+<img src="./ic_menu_preferences.png" style="padding:0 0 4px 0;"><br>
+<img src="./settings-all.png" style="width:155px;height:235px;"><br/>
+<img src="./settings-all2.png" style="width: 155px; height: 157px;">
+</p><p>
+The <b>settings</b> are as follows:
+</p><div class="itemtitle">Touch Highlighting</div>
+<div class="itembody">
+ When ON, a small red dot will be displayed over the Main Web Viewing Display whenever your 
+ finger is on the screen. 
+ This is useful when you are mirroring the screen to an external display, such as 
+ with supported HDMI adapters.
+</div>
+<div class="itemtitle">Status Bar</div>
+<div class="itembody">
+ Controls the display of the device status bar at the 
+ top of the screen on the Main Web Viewing Display.
+</div>
+<div class="itemtitle">Toolbar Button</div>
+<div class="itembody">
+ Controls the display of the Toolbar Button on the Main Web Viewing Display. 
+ While you will no longer be able to access the Toolbar Button in the current Web Viewing Display, you can still access the Preferences screen from the Bookmarks list.
+</div>
+<div class="itemtitle">Use PhoneGap/Cordova</div>
+<div class="itembody">
+ Controls which type of browser view is used. 
+ When "OFF" (the initial default), a normal, plain WebView is used. 
+ This should behave like a normal browser window. 
+ When "ON", a Cordova view is used (controlled by an Android CordovaInterface). 
+ (Cordova is the name of the Open Source engine that powers PhoneGap.)
+ This lets the web pages you load take advantage of native Android code 
+ using Cordova (PhoneGap) protocols. 
+ You can find out which version of Cordova is being used, and see a list of the 
+ installed plug-ins, by tapping the About setting row.
+ <br><br>
+ Note: This setting applies to all URLs loaded by the app. 
+ When you change this setting the app will switch which view is displayed, 
+ but that view is not reloaded. You should then go to the Bookmarks list and select the 
+ URL you wish to load.
+</div>
+<div class="itemtitle">Cookies</div>
+<img src="./cookies_all.png" style="width:310px;height:81px;"/><br/><br/>
+<img src="./cookies_select.png" style="width:310px;height:136px;"/>
+<div class="itembody">
+ Displays the current web cookies stored by this app. 
+ When they are displayed there is a button for deleting all of them. 
+ You may copy any of the data displayed by pressing and holding on the display 
+ and using the standard Android Copy, etc., commands.<br/>
+ You can view the cookies either as a selectable list per entry or one a single page with entries appropriately separated.  
+ To switch between views, you press the Switch View button <img src="./ic_menu_chat_dashboard.png"/>.  You can also delete all of the cookies 
+ by clicking on the Trash icon <img src="./ic_menu_delete.png"/>.  These will be grayed out when the functionality is unavailable (e.g. there are no entries to display).
+</div>
+<div class="itemtitle">Log File</div>
+<div class="itembody">
+ Brings up the AlphaRun Log File. 
+ Items are added to this file when logging errors and when the special JavaScript 
+ is run. For information about both cases, see below. 
+ When the Log File is displayed there is a button to erase all of it. 
+ You may copy any of the data displayed by pressing and holding on the display 
+ and using the standard Android Copy, etc., commands.<br/>
+ Navigation and display of the log entries is the same as that available for cookies.
+</div>
+<div class="itemtitle">Log Errors</div>
+<div class="itembody">
+ Controls whether or not loading errors on the Main Web View Display are added to the Log File.
+</div>
+<div class="itemtitle">Clear Browser Cache</div>
+<div class="itembody">
+ When tapped, this setting will remove all responses from the 
+ cache used by this app's browser views, as well as related cookies and other data.  
+ The size of the cache shown is inexact but instead a close approximation of data stored on the device from the viewing session.  This cache is separate from that stored by the other brower(s) on the device.
+</div>
+<div class="itemtitle">URL Variable</div>
+<div class="itembody">
+ This optional text is automatically inserted into URLs in place of the characters "[[v1]]". 
+ It is useful, for example, to set a part of multiple bookmarks that varies from time to 
+ time, such as the IP address of a local server on a LAN accessed over WiFi during testing.
+</div>
+<div class="itemtitle">JavaScript</div>
+<div class="itembody">
+ This feature is mainly for developers who are familiar with JavaScript. 
+ It may be ignored by other users. 
+ When this setting has a text value, such as:
+ <div class="source">"body="+document.body.innerHTML</div>
+ the Toolbar will have an extra button: the <b>js</b> button <img src="./ic_menu_start_conversation.png"/>.
+ Whenever that button is pressed, the JavaScript in this setting will be executed 
+ and the resulting value will be added to the Log File.
+</div>
+<div class="itemtitle">Previous JS Commands list.</div>
+<div class="itembody">
+A selectable list of the 5 most recent JS commands used by you.  Selecting one will replace the current Javascript text field with this value.  
+</div>
+<div class="itemtitle">Help</div>
+<div class="itembody">
+ Loads and displays the latest help page from the AlphaRun support web site.
+</div>
+<div class="itemtitle">About</div>
+<div class="lastbody">
+ Displays the current app version. 
+ When tapped, it displays additional information if appropriate.
+</div>
+<p> When available, the <b>Up</b> button next to AlphaRun's icon allows you to navigate back from your current position.  The behavior should feel similar to standard Android <b>back</b> behavior in most circumstances.
+</p>
+<p>
+Pressing the Android <b>back</b> button returns to the Main Web Viewing Display.  All changes made to the Preferences will be saved.
+</p>
+<br>
+</div>
+<div style="font-size:80%;padding-top:20px;text-align:center;">
+Copyright © 2013 <a href="http://www.alphasoftware.com/">Alpha Software Corporation.</a><br>
+All Rights Reserved.<br>
+</div>
+
+
+</div></body></html>

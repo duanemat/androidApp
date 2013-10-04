@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:columnOrderPreserved="false"
+    android:useDefaultMargins="true" >
+
+    <!-- Domain field -->
+
+    <TextView
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:text="DOMAIN:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDomain"
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:text="Domain" />
+
+    <!-- Name field -->
+
+    <TextView
+        android:layout_gravity="left"
+        android:text="NAME"
+        android:layout_height="wrap_content"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+    <!-- Value field -->
+
+    <TextView
+        android:layout_gravity="left"
+        android:text="VALUE:"
+        android:layout_height="wrap_content"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtValue"
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:text="Value" />
+
+    <!-- Expires -->
+
+    <TextView
+        android:layout_gravity="left"
+        android:text="EXPIRES"
+        android:layout_height="wrap_content"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtExpires"
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:text="Expires" />
+
+
+</GridLayout>

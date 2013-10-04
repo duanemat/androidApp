@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.alphasoftware.alpharun.utils.WebViewCanvas
+        android:id="@+id/mainWebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.alphasoftware.alpharun.utils.WebViewCanvas>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/controlBand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="10dp" >
+
+            <ImageButton
+                android:id="@+id/controlBackBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:contentDescription="TODO"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_back"
+                tools:ignore="ContentDescription,HardcodedText" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlFwdBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_forward"
+                tools:ignore="ContentDescription" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlRefreshBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_refresh"
+                tools:ignore="ContentDescription" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlStopBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_close_clear_cancel"
+                tools:ignore="ContentDescription" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlJSBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_start_conversation"
+                tools:ignore="ContentDescription" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlPrefBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_preferences"
+                tools:ignore="ContentDescription" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlBookmarkBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="2"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_agenda"
+                tools:ignore="ContentDescription" 
+                android:visibility="invisible"/>
+
+            <ImageButton
+                android:id="@+id/controlBtn"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="controllerClicked"
+                android:src="@drawable/ic_menu_compass"
+                tools:ignore="HardcodedText,ContentDescription" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

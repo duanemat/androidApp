@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/log_activity_layout"
+    android:orientation="vertical">
+    <ProgressBar
+        android:id="@+id/log_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <fragment
+        android:id="@+id/item_list"
+        android:name="com.alphasoftware.alpharun.cookie_and_logs.ItemListFlatFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="16dp"
+        android:textSize="20sp"
+        tools:context=".ItemListActivity"
+        tools:layout="@layout/logfileview" />
+
+
+
+</LinearLayout>

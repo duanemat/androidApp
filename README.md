@@ -1,4 +1,4 @@
-androidApp
-==========
+AndroidWebApp
+=============
 
-Android App
+Simple Android Web App

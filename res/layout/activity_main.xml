@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/emptyListLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/editingEmptyList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editingEmptyList"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/bigSize" />
+
+        <TextView
+            android:id="@+id/editingEmptyList_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editingEmptyList_sub"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/smallSize" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="-10dp"
+            android:layout_height="1dp"
+            android:background="@drawable/black_white_gradient"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+            
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/startupHelpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/startupHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/startupHelp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/bigSize" />
+
+        <TextView
+            android:id="@+id/startupHelp_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/startupHelp_sub"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/smallSize" />
+    </LinearLayout>
+
+    <!--
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/Header" >
+
+        <ImageButton
+            android:id="@+id/mainAdd"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addBookmark"
+            android:src="@android:drawable/ic_menu_add" />
+
+        <ImageButton
+            android:id="@+id/mainPref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:onClick="loadPrefs"
+            android:src="@drawable/ic_menu_preferences"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+    -->
+
+    <ListView
+        android:id="@android:id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:choiceMode="singleChoice"
+        android:clickable="true" />
+
+</LinearLayout>
